@@ -29,15 +29,15 @@
             </tr>
             <tr>
                 <td>Datum završetka čitanja: </td>
-                <td><input type="date" name="kraj_citanja" ></td>
+                <td><input type="date" name="kraj_citanja" value="{{$knjiga->kraj_citanja}}"></td>
             </tr>
             <tr>
                 <td>Komentar: </td>
-                <td><input type="text" name="komentar" ></td>
+                <td><input type="text" name="komentar" value="{{$knjiga->komentar}}" ></td>
             </tr>
             <tr>
                 <td>Ocjena: </td>
-                <td><input type="number" name="ocjena" step="1" max="10" min="1"></td>
+                <td><input type="number" name="ocjena" step="1" max="10" min="1" value="{{$knjiga->ocjena}}" ></td>
             </tr>
         </table>
         <br>

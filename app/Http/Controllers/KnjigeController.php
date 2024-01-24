@@ -98,18 +98,20 @@ class KnjigeController extends Controller
     {
         try
         {
+            
             //validacija forme
+            //kod edita polja kraj_citanja, komentar i ocjena mogu biti nullable (da se uopće ne unose)
             $request->validate(
                 [
                     "naziv" => "string|required|max:255",
                     "autor_prezime" => "string|required|max:255",
                     "autor_ime" => "string|required|max:255",
                     "pocetak_citanja" => "date|required",
-                    "kraj_citanja" => "date|required",
-                    "komentar" => "string|required|max:255",
-                    "ocjena" => "integer|required|max:10|min:1",
+                    "kraj_citanja" => "date|nullable",
+                    "komentar" => "string|max:255|nullable",
+                    "ocjena" => "integer|max:10|min:1|nullable",
                 ]);
-            
+
             //pronaći knjigu po id
             $knjiga=Knjiga::find($id);
 
